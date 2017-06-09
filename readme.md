@@ -1,4 +1,6 @@
-This repo contains code for a small example and for reproducting Columns 2 and 4 of Table 1 in the main paper.
+This repo contains code for a small example and for reproducting Columns 2 and 4 of Table 1 
+  
+  Shizhe Chen, Ali Shojaie, and Daniela M. Witten. Network reconstruction from high-dimensional ordinary differential equations. Journal of the American Statistical Association (to appear), 2017
 
 For the example, run './Example/Example.R'.
 To reproduce the simulation, run './Table_1/Proposed_PS.R' and './Table_1/Proposed_PS100.R' with different random seeds. 
