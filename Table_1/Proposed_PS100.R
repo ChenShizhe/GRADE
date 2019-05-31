@@ -68,6 +68,6 @@ for(fni in fns){
   fits.fun.PS<-GRADE(observations=observations, times_e=times_e,type_reg=type_reg, type_data=type_data,type_basis="penalized spline", type_smooth=type_smooth, xhat=xhat, xprime=NULL,lambdas=lambdasCD, lambdas.fun=L1s,nspecs=nspecs)
   CD.PS<-countGraph(graph_est=fits.fun.PS$neighbour.path,graph_true=t(A),self=F)
   print(fni)
-  #save(CD.PS, file=paste("./RData/fig4",fni,RandomSeed,"US",p,"S", si, "PSFinal.RData",sep=""))
+  save(CD.PS, file=paste("./RData/fig4",fni,RandomSeed,"US",p,"S", si, "PSFinal.RData",sep=""))
 }
 
