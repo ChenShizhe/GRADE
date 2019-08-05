@@ -65,8 +65,9 @@ smoothX<-function(observations,times_e,deg,h=NULL,maxk=5000,
         }
       } else if(type_smooth=="local polynomial"){
         # Get the LP estimates 
+         gcvscore[[r]]<-matrix(0,nrow=length(h),ncol= p)
         for(i in 1:p){
-          gcvscore[[r]]<-matrix(0,nrow=length(h),ncol= p)
+         
           for(j in 1:length(h)){
             h_temp<-h[j]
             temp <- locfit(obs[,i+1]~lp(obs[,1],deg=deg,h= h_temp),maxk=maxk)
@@ -79,8 +80,9 @@ smoothX<-function(observations,times_e,deg,h=NULL,maxk=5000,
         }
         
       } else if (type_smooth == "smoothspline"){
-        for(i in 1:p){
           gcvscore[[r]]<-numeric(p)
+        for(i in 1:p){
+        
           
           temp <- smooth.spline(obs[,1], obs[,i+1], all.knots = T)
           gcvscore[[r]][i]<-temp$cv.crit
